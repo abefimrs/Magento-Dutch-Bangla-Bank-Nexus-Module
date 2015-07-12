@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!--
+ * @category   Community
+ * @package    MagentoCenter_Wm
+ * @copyright  http://Magentocenter.org
+ * @license    Open Software License (OSL 3.0)
+ * Webmoney Transfer payment module
+ * @author     Magentocenter.org    -   Magento Store Setup, data migration, upgrades and much more!
+-->
+<config>
+    <modules>
+        <MagentoCenter_Wm>
+            <version>0.0.1</version>
+        </MagentoCenter_Wm>
+    </modules>
+    <global>
+        <models>
+            <wm>
+                <class>MagentoCenter_Wm_Model</class>
+            </wm>
+        </models>
+        <blocks>
+            <wm>
+                <class>MagentoCenter_Wm_Block</class>
+            </wm>
+        </blocks>
+        <resources>
+            <wm_setup>
+                <setup>
+                    <module>MagentoCenter_Wm</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </wm_setup>
+            <wm_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </wm_write>
+            <wm_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </wm_read>
+        </resources>
+        <helpers>
+            <wm>
+                <class>MagentoCenter_Wm_Helper</class>
+            </wm>
+        </helpers>
+    </global>
+    <frontend>
+        <secure_url>
+            <wm_redirect>/wm/redirect/</wm_redirect>
+        </secure_url>
+        <routers>
+            <wm>
+                <use>standard</use>
+                <args>
+                    <module>MagentoCenter_Wm</module>
+                    <frontName>wm</frontName>
+                </args>
+            </wm>
+        </routers>
+        <translate>
+            <modules>
+                <MagentoCenter_Wm>
+                    <files>
+                        <default>MagentoCenter_Wm.csv</default>
+                    </files>
+                </MagentoCenter_Wm>
+            </modules>
+        </translate>
+    </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <MagentoCenter_Wm>
+                    <files>
+                        <default>MagentoCenter_Wm.csv</default>
+                    </files>
+                </MagentoCenter_Wm>
+            </modules>
+        </translate>
+    </adminhtml>
+    <default>
+        <payment>
+            <wm>
+                <active>0</active>
+                <model>wm/checkout</model>
+                <title>Butch Bangla Bank Payment</title>
+                <wm_wallet>R400572561461</wm_wallet>
+                <order_status>3</order_status>
+				<sort_order>3</sort_order>
+            </wm>
+        </payment>
+    </default>
+</config>
