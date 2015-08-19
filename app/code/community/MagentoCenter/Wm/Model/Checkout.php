@@ -16,7 +16,7 @@ class MagentoCenter_Wm_Model_Checkout extends Mage_Payment_Model_Method_Abstract
     }
 
     public function getWebmoneyUrl() {
-		$url = 'http://bangladeshbrand.com/dbblpay/payment.php';
+		$url = '<GATEWAY URL>';
         return $url;
     }
 
@@ -54,11 +54,11 @@ class MagentoCenter_Wm_Model_Checkout extends Mage_Payment_Model_Method_Abstract
 		*	redirect url is the url to redirect	
 		*/
 		
-		$payment_method = 'dutch';
+		$payment_method = '<MEHTOD NAME>';
 		
 		
-		$domain_name = 'http://bangladeshbrands.com';
-		$redirect_url = 'http://bangladeshbrands.com/wm/redirect/success';
+		$domain_name = '<DOMAIN NAME>';
+		$redirect_url = '<DOMAIN NAME >/wm/redirect/success';
 
 
         $params = array(
